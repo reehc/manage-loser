@@ -1,0 +1,7 @@
+Remember do
+$ chmod 755 backheer.sh
+or
+$ chmod a+rx backheer.sh
+before
+$ ./backheer.sh
+

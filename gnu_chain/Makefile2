@@ -1,0 +1,42 @@
+# 1. Compile & link
+# Every legal file(.c | .h): compile->object file(.o)
+# link(func, global var)->executable file
+# during linking, explicit object file name is required,
+# archive file(.a) makes linking easy in UNIX
+
+# MAKE RULE 1: make makes new things! 
+
+# INFERENCE:  			\
+	main.o   		\
+	is equal to 		\
+	main.o: main.c		\
+		cc -c main.c  	\
+
+# wildcard & keyword
+# $% $^ %<
+
+# FILE SEARCH 			\
+vpath %.c <directories>		\
+vpath <pattern>     clear assign\
+vpath		    clear all
+VPATH = src:../headers
+
+-include cannot find but no error 
+
+CC = gcc
+CFLAGS = -std=c99
+
+# .PHONY: all
+# all: prog1 prog2 prog3
+
+io: main.o
+	$(CC) main.o -o out
+	@echo make done!
+
+main.o: main.c
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+
+.PHONY: clean
+clean:
+	-rm out *.o
