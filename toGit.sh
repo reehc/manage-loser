@@ -2,7 +2,7 @@
 
 # Add file or directory to Github every FAST!
 
-GIT_DIR=~/cheerspace/withUnix/
+GIT_DIR=~/cheerspace/TTTTT/
 PWD=$(pwd)
 
 if [ $# -ne 2 ]
